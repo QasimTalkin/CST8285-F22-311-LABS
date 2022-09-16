@@ -1,11 +1,17 @@
-# Hello Welcome to my git 
+# Live Class code examples - FALL -2022
 
-asjkbasdhjva
+## CST-8289- TUESDAY 4:00PM - 6:00PM
 
 
-## My Favorite Class is Java
+## CST-8285 - WEDNESDAY 4:00PM - 6:00PM
 
-This is how you say hello world in Java
-```java
-system.out.println("Hello World");
-```
+## CST-8117 - THURSDAY 5:30PM - 7:30PM
+
+## CST-8209- THURSDAY 7:30PM - 9:30PM
+
+## CST-8285 - FRIDAY 4:00PM - 6:00PM
+
+## CST-8117 - FRIDAY 6:00PM - 8:00PM
+
+
+
