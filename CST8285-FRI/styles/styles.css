@@ -1,0 +1,69 @@
+* {
+  margin: 0;
+  padding:0;
+}
+
+
+body {
+  background-color: bisque;
+}
+
+nav {
+  padding: 10px;
+  background-color: rgb(158, 215, 133);
+  position: fixed;
+  width: 100%;
+  top:0;
+  z-index: 2;
+}
+
+nav li, nav ul {
+  display: inline;
+  margin:0 10px;
+}
+/*  
+
+Hey sorry abotu this its your problem now 
+*/
+nav > a {
+  text-decoration: none;
+  font-family: 'Gill Sans';
+  padding: 5px 10px;
+  border: 2px solid rgb(58, 55, 37);
+  border-radius: 30px;
+  margin: 10px;
+  color:azure
+}
+
+nav ul {
+float: right;
+}
+
+.navLinks a {
+
+  font-family: cursive;
+  text-decoration: none;
+  color:black
+}
+
+.banner {
+  width: 100%;
+}
+.bannerSection {
+  position: relative;
+}
+.welcome {
+  position: absolute;
+  color:azure;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: 400;
+  top:30%;
+  left:30%;
+  background-color: rgba(211, 211, 211, 0.244);
+  z-index: 1;
+  font-size: 2rem;
+}
+
+a:hover {
+  color:burlywood
+}
