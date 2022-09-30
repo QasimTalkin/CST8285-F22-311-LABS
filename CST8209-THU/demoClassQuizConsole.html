@@ -14,30 +14,36 @@
   
   var question1 = 'What is the capital of Canada?'
   var answer1 = 'Ottawa';
+  var userTries = 0;
   
   var question2 = 'how do you store values in Javascript?'
   var answer2= 'var'
-  
-  var userAnswer1 =  prompt(question1);
-  
-  console.log(userAnswer1 == answer1 );
-  if (userAnswer1 == answer1 ){ 
+ do {
+    var userAnswer1 =  prompt(question1);
+    console.log(userAnswer1 == answer1 );
+    if (userAnswer1 == answer1 ){ 
+        score = score + 1; 
+      } else {
+        score = score -1;
+      }
+    console.log(score);
+    var userAnswer2 = prompt(question2);
+    console.log(userAnswer2);
+    
+    if (userAnswer2 == answer2) {
       score = score + 1; 
-    } else {
-      score = score -1;
     }
+    console.log(score)
+    if (score == 2) console.log('🥳 congrats');
+
+  userTries = userTries +1;
   
-  console.log(score);
-  var userAnswer2 = prompt(question2);
-  console.log(userAnswer2);
+  } while(false)
+
   
-  if (userAnswer2 == answer2) {
-    score = score + 1; 
-  }
-  console.log(score)
   
-  if (score == 2) console.log('🥳 congrats');
-  
+
+
   </script>
 
 
