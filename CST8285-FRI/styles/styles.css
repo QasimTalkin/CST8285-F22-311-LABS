@@ -17,7 +17,7 @@ main {
 nav {
   padding: 10px;
   background-color: rgb(158, 215, 133);
-  position: fixed;
+  position: relative;
   width: 100%;
   top:0;
   z-index: 2;
@@ -168,7 +168,7 @@ footer {
   background-color: rgb(158, 215, 133);
   text-align: center;
   padding: 20px;
-  position: relative;
+  position: fixed;
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
