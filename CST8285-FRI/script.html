@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Class Live Demo</title>
     <link rel="stylesheet" href="./styles/styles.css">
-    
+    <link rel="stylesheet" href="./styles/script.css">
   </head>
   <body>
     <header>
@@ -23,7 +23,31 @@
       </nav>
     </header>
     <main>
+      <div class="flexRow toggle">
+        <div class="column">
+          <p>DARK MODE</p>
+        </div>
+        <label class="switch column">
+          <input type="checkbox" id="switch">
+          <span class="slider round"></span>
+        </label>
+        <div class="column">
+          <p>LIGHT MODE</p>
+        </div>
+      </div>
+    <!-- sample restaurant menu -->
+        <section>
+          <div class="flexRow">
+            <div class="column" id="myList">
+              <h2>Menu</h2>
+              <ul id="menuItems">
 
+              </ul>
+            </div>
+          </div>
+        
+        
+        </section>
     </main>
     <footer>
       <form action="random.php" method="get">
@@ -33,5 +57,9 @@
       </form>
       </form>
     </footer>
+    
+    
+    
+    <script src="./script.js"></script>
   </body>
 </html>

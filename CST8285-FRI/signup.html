@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign up page</title>
   <link rel="stylesheet" href="/styles/styles.css">
+
 </head>
 <body>
   <main>
@@ -13,78 +14,7 @@
     <form action="#" method="POST" id="our-form" enctype="text/plain">
 
       <label for="userName">user Name</label>
-      <input type="text" id="userName" name="userName" placeholder="Enter User Name" required>
-      <br>
-      <br>
-      <label for="password">Password</label>
-      <input type="password" id="password" name="password">
-      <br>
-      <br>
-      <label for="comments">Enter Comments</label>
-      <textarea id="comments" placeholder="Enter you comments" cols="50" row="30"></textarea>
-      <br>      <br>
-      <fieldset>
-        <legend>select your age</legend>
-        <input type="radio" name="age">18+</input>
-        <input type="radio" name="age">19-50</input>
-        <input type="radio"name="age">50+</input>
-      </fieldset>
-      
-      
-      
-
-      <br>      <br>
-      <select name="listOfQs">
-      <optgroup label="good Question"></optgroup>
-      <optgroup label="bad Question">
-      
-      
-        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3" selected>name of your first pet?</option>
-        <option value="q1">name of your granny?</option>
-      
-      </optgroup>
-
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>        <option value="q1">name of your granny?</option>
-        <option value="q2">name of your first card?</option>
-        <option value="q3">name of your first pet?</option>
-      </select>
-      
-      
-    <input type="checkbox" name="checkbox" name="checkbox"><label for="checkbox">Do you agreeeeee????</label>
-    <br>      <br>
-
-    <input type="color" >
-
-
-    <br>      <br>
-    <input type="submit" value="Submit From">
-    
-    <label for="verification">please add credit card for verification</label>
-    <input type="file">
-    <br>      <br>
-    <input type="reset" value="reset From">
-    </form>
-  
-  
+      <input type="text" id="userName" name="userName" placeholder="Enter User Name" pattern="[a-zA-z]{,3}"required>
   </main>
   
 
