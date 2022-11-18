@@ -1,42 +1,29 @@
+function sayHello() {
+  alert('hello')
+}
 
 
 
 
+document.signUpForm.email.addEventListener('keyup',validateEmail);
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+function validateEmail() {
+  var myEmailPattern = /[a-zA-z_.-0-9]+@[a-zA-Z].[a-zA-Z]{2,4}/
+  var emailValue = document.signUpForm.email.value;
+  var isEmailValid = myEmailPattern.test(emailValue)
+  console.log(isEmailValid)
+  if (!isEmailValid && document.querySelector('.errorClass') === null){
+  
+   var errorElem = document.createElement('p')
+   errorElem.textContent = "FIX YO EMAIL DUDEEEE"
+   errorElem.style.color = 'red'
+   errorElem.classList.add('errorClass')
+   document.signUpForm.email.after(errorElem)
+  } else if(isEmailValid){
+    document.querySelector('.errorClass')?.remove();
+  }
+}
 
 
 
@@ -93,3 +80,29 @@
 //     document.querySelector('.emailError').remove();
 //   }
 // }
+
+
+// function sayHello() {
+//   alert(document.signUpForm.name.value)
+
+// }
+// document.signUpForm.name.addEventListener('blur', validateName);
+
+// function validateName() {
+//   let userName = document.signUpForm.name.value;
+//   var myEmailPattern = /[a-zA-z_.-0-9]+@[a-zA-Z].[a-zA-Z]{2,4}/
+//   let checkEmail = myEmailPattern.test(userName)
+//   if (!checkEmail){
+//     alert('FIX IT MAN')
+//   }
+//   if(userName.length === 0 && document.querySelector('.emailError') === null){
+//     var error = document.createElement('p')
+//     error.textContent = 'Invalid Please FIXXXXX it'
+//     error.style.color = 'red'
+//     error.classList.add('emailError');
+//     document.signUpForm.name.after(error)
+//   } else if(userName.length > 0 ) {
+//     document.querySelector('.emailError').remove()
+//   }
+// }
+
