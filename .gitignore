@@ -1,1 +1,7 @@
 /playground
+/CST8285-FRI/sys/devilbox/*
+!/CST8285-FRI/sys/devilbox/data
+/CST8285-FRI/sys/devilbox/data/*
+!/CST8285-FRI/sys/devilbox/data/www
+
+
