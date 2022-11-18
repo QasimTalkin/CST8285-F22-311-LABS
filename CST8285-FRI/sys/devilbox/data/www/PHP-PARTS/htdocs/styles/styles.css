@@ -13,6 +13,7 @@ body {
 main {
     max-width: 1080px;
     margin: 0 auto;
+    padding: 0 20px;
 }
 nav {
   padding: 10px;
@@ -173,4 +174,11 @@ footer {
   bottom: 0;
   width: 100%;
   box-sizing: border-box;
+}
+
+h3 {
+  font-size:1.5rem;
+  padding: 60px;
+  text-align: center;
+  width: 100%;
 }
