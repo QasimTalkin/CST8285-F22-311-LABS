@@ -1,0 +1,4 @@
+This is a simple poem
+ PHP stands for Hypertext Preprocessor
+ PHP is a server side scripting language
+ PHP is fun and easy to learn
