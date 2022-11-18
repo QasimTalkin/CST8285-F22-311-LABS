@@ -1,0 +1,83 @@
+.main-about {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ grid-template-areas: 
+  "about-info about-info about-info about-info about-info about-info"
+  "aside course-list course-list course-list course-list course-list"
+  "aside course-list course-list course-list course-list course-list"
+  "aside course-list course-list course-list course-list course-list"
+  "aside course-list course-list course-list course-list course-list"
+ ;
+}
+
+.about-info{
+  grid-area: about-info;
+  background-color: rgb(63, 62, 93);
+  padding: 20px;
+  color:azure;
+}
+
+aside {
+  grid-area: aside;
+  background-color: rgb(62, 93, 71);
+  color:aliceblue;
+  padding: 20px;
+  text-align: center;
+}
+
+aside li {
+  margin: 10px;
+}
+
+.course-list {
+  grid-area: course-list;
+  display: flex;
+  background-color:white;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 25px;
+  box-sizing: border-box;
+}
+
+.course{
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 300px;
+  border:1px solid rgb(62, 93, 71);
+  border-radius: 20px;
+  margin: 20px;
+  padding: 20px;
+  rotate: 5deg;
+  box-shadow: 5px 10px 10px rgb(62, 93, 71);
+}
+
+.course h3 {
+  text-align: center;
+  background-color: rgb(63, 62, 93);
+  color:azure;
+  border-radius: 30px 30px 1px 1px;
+  padding: 5px;
+}
+
+.course p {
+  text-align: center;
+}
+
+.course img {
+  width: 100%;
+  height: 200px;
+}
+
+
+@media screen and (max-width: 800px) {
+  .main-about {
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+      "about-info"
+      "aside"
+      "course-list"
+    ;
+  }
+}
+  
