@@ -14,7 +14,7 @@
         <a href="/">My Logo</a>
         <ul class="navLinks">
           <li><a href="/CST8285-MIDTERM.html">Midterm</a></li>
-          <li><a href="/signup.php">Sign up</a></li>
+          <li><a href="/signup.php"><?php echo $login ? $login : 'Sign Up' ?></a></li>
           <li><a href="/schoolCode">School Code</a></li>
         </ul>
       </nav>

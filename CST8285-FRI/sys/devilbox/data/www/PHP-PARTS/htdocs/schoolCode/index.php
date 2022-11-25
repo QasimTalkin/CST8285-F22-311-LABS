@@ -1,56 +1,68 @@
-<?php 
-  include "./../partials/header.php";
-  $name = 'abul qasim';
-  $isNotSleepy = false;
-  $my_number = 123.33;
-  define('class', 'Web Dev');
+<!-- landing page -->
+<!DOCTYPE html>
+<html lang="en">
 
-  printValue($name);
-  
-  echo $name;
- 
+<head>
+  <link rel="stylesheet" href="style.css" />
+  <title>PHP_DB</title>
+</head>
 
+<body>
+  //insert the header code here
+  <?php include("headerEm.php");
+  //connect with the database
   
-  echo "Hello My Name is $name <br>" .  gettype($my_number) . " " .  $my_number;
-  
-  $myArray = array($name, $isNotSleepy, 'a', $my_number);
-  
-  
-  
-  print_r($myArray);
-  
-  print(asort($myArray));
-  
-  echo $myArray[0];
-  echo '<ul>';
-  foreach ($myArray as $item) {
-    $item = $item ? strtoupper($item) : "SAD";
-    echo "<li> <h2>$item </h2> </li>";
-  };
-  echo '</ul>';
-  
-  function printValue(&$myValues){
-    $myValues =  strtoupper($myValues);
-    
-    echo($myValues);
-  };
-  
+  require_once('database.php');
 
-  
-?>
-<main>
- <table>
-  <th> SERVER info</th>
-   <?php
-     foreach ($_SERVER as $key => $value) {
-    
-      echo "<tr> <td>$key </td>  <td>$value </td> </tr>";
-    };
-   ?>
- </table>
+  $db = db_connect(); //my connection
 
-</main>
+  $sql = "SELECT * FROM employees "; //query string
+  $sql .= "ORDER BY salary ASC";
+  //execute the query
+  $result_set = mysqli_query($db, $sql);
 
-<?php 
-  include "./../partials/footer.php";
-?>
+  ?>
+
+  <div id="content">
+    <div class="subjects listing">
+      <h1>EMPLOYEES</h1>
+
+      <div class="actions">
+        <a class="action" href="new.php">Create New Employee</a>
+      </div>
+
+      <table class="list">
+        <tr>
+          <th>ID</th>
+          <th>name</th>
+          <th>address</th>
+          <th>salary</th>
+          <th>&nbsp</th>
+          <th>&nbsp</th>
+          <th>&nbsp</th>
+        </tr>
+        <!-- Process the results -->
+        <?php while ($results = mysqli_fetch_assoc($result_set)) { ?>
+          <tr>
+            <td><?php echo $results['id']; ?></td>
+            <td><?php echo $results['name']; ?></td>
+            <td><?php echo $results['address']; ?></td>
+            <td><?php echo $results['salary']; ?></td>
+            <!-- send the id as parameter -->
+            <td><a class="action" href="<?php echo "show.php?id=" . $results['id']; ?>">View</a></td>
+            <td><a class="action" href="<?php echo "edit.php?id=" . $results['id']; ?>">Edit</a></td>
+            <td><a class="action" href=<?php echo "delete.php?id=" . $results['id']; ?>">delete</a></td>
+
+          </tr>
+        <?php } ?>
+      </table>
+      <br>
+      <br>
+      <br>
+      <br>
+      <!-- add the footer here -->
+      <?php include("footerEm.php"); ?>
+
+</body>
+
+</html>

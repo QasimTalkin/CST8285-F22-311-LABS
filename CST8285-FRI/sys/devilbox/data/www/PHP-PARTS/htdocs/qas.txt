@@ -1,0 +1,44 @@
+
+
+<?php 
+include './partials/header.php';
+
+
+
+echo '<pre>';
+print_r($users);
+echo '</pre>';
+?>
+<?php 
+// open file and out put the contents as list items file: htdocs/schoolCode/newfile.txt
+  echo 'strat of file';
+  $my_file = file_get_contents('./schoolCode/newfile.txt');
+  echo "<h2>File Content </h2>" .  $my_file;
+  echo "<h2>file content line by line</h2>";
+  $file_content = fopen('./schoolCode/newfile.txt', 'r');
+  echo "<ol>";
+  while(!feof($file_content)){
+    echo "<li>" . fgets($file_content) . "</li>";
+  }
+  echo "</ol>";
+?>
+
+<?php
+  include './partials/footer.php';
+?>
+
+
+
+
+
+
+
+<!-- $db = mysqli_connect('127.0.0.2', 'root', '', 'to_do_db', 3306);
+
+
+// CRUD!!!
+//read users 
+
+$get_user_query = "SELECT * FROM users";
+$result = mysqli_query($db, $get_user_query);
+$users = mysqli_fetch_all($result, MYSQLI_ASSOC); -->
