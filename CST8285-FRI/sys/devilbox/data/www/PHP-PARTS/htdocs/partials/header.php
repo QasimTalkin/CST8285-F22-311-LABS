@@ -1,3 +1,4 @@
+<?php session_start()?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -14,8 +15,10 @@
         <a href="/">My Logo</a>
         <ul class="navLinks">
           <li><a href="/CST8285-MIDTERM.html">Midterm</a></li>
-          <li><a href="/signup.php"><?php echo $login ? $login : 'Sign Up' ?></a></li>
-          <li><a href="/schoolCode">School Code</a></li>
+          <li><a href="/signup.php"><?php echo isset($login) ? $login : 'Sign Up' ?></a></li>
+          <li> <a href="/login.php"> login </a></li>
+          <?php
+          echo isset($_SESSION['user_id']) ? 'session set': 'Sign Up' ?>
         </ul>
       </nav>
   </header>

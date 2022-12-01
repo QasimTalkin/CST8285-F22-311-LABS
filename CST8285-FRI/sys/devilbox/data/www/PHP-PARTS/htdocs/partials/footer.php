@@ -7,4 +7,7 @@
       </form>
 </footer>
   </body>
+  
+<link rel="stylesheet" href="./styles/signUp.css">
+<script src="./script/signup.js"></script>
 </html>
