@@ -1,10 +1,12 @@
 <?php 
   include './partials/header.php';
+  
 ?>
 <main>
   <section class="bannerSection"><img class='banner' src="https://wallpaperaccess.com/full/253796.jpg"
       alt="an image of me">
-    <p class="welcome">Welcome to Web Dev</p>
+    <p class="welcome">Welcome to Web Dev
+    </p>
   </section>
   <h2 id="flex">FELX BOX</h2>
   <div class="myFlexContainer">

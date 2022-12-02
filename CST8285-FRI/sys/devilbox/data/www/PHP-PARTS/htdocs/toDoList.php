@@ -2,10 +2,19 @@
 require_once('./connection/database.php');
 session_start();
 $db_connection = db_connect();
-if ($_SESSION['user_id']) {
+if (isset($_SESSION['user_id'])) {
+  if (isset($_POST['toDoItem'])){
+    $task = $_POST['task'];
+    $status = $_POST['status'];
+    $user_id = $_SESSION['user_id'];
+    $sql = "INSERT INTO `to_do_list` (`user_id`, `task`, `status`) VALUES ('$user_id', '$task', '$status')";
+    print('QaaAsim');
+    $result = mysqli_query($db_connection, $sql);
+    print_r($result);
+  }
   fetchToDoList($db_connection);
 } else {
-  print_r($_SESSION);
+  loginUser($db_connection);
 }
 function loginUser($db_connection){
   if (!empty($_POST['name']) && !empty($_POST['pwd'])) {
@@ -39,24 +48,13 @@ function fetchToDoList($db_connection) {
 
 function renderToDoList($to_do_list) {
   include './partials/header.php';
-  while ($to_do_item = array_shift($to_do_list)) {
-    echo '<div class="toDoItem">
-      <div class="toDoItem__title">
-        <h3>' . $to_do_item[1] . '</h3>
-      </div>
-      <div class="toDoItem__description">
-        <p>' . $to_do_item[2] . '</p>
-      </div>
-      <div class="toDoItem__date">
-        <p>' . $to_do_item[3] . '</p>
-      </div>
-      <div class="toDoItem__status">
-        <p>' . $to_do_item[4] . '</p>
-      </div>
-    </div>';
-  };
-
-  echo "<h2> Render Done</h2>";
+  echo "<table style='width: 80%; text-align: center; margin:20px auto' border='1'>";
+  echo "<tr><th>Task #</th><th>Task</th><th>Status</th></tr>";
+  foreach ($to_do_list as $row) {
+    echo "<tr><td>" . $row[0] . "</td><td>" . $row[2] . "</td><td>" . $row[3] . "</td></tr>";
+  }
+  echo "</table>";
+  ;
   renderAddToDoItemForm();
   include './partials/footer.php';
 }
@@ -67,9 +65,7 @@ function redirectToSignUp() {
 
 function renderAddToDoItemForm() {
   echo '<form name="toDoItemForm" class="userForm" method="POST" action="toDoList.php">
-    <input type="text" name="title" placeholder="Title...">
-    <input type="text" name="description" placeholder="Description...">
-    <input type="date" name="date" placeholder="Date...">
+    <input type="text" name="task" placeholder="Title...">
     <input type="text" name="status" placeholder="Status...">
     <button type="submit" name="toDoItem">Add</button>
   </form>';
