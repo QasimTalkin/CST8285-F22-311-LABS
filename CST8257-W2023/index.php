@@ -1,77 +1,82 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=\, initial-scale=1.0">
+  <title>OOP in PHP</title>
+</head>
+<body>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <?php 
+   class Student {
+    private $user_name;
+     public $email;
+    public function __construct($un) {
+      echo "The Class " . __CLASS__ . " was instantiated <br>";
+      $this->user_name = $un;
+    }
+    
+    public function writeName() {
+      return "My Name is " . $this->user_name;
+    }
+    
+    
+    public function __toString() {
+      return "Hi";
+    }
 
-    <title>PHP FORM</title>
-  </head>
-  <body style='margin:80px'>
+    // public function __destruct() {
+    //   echo "The Class " . __CLASS__ . " was destroyed <br>";
+    //   echo "The Class " . $this->user_name . " was destroyed <br>";
+    //  }
+    
+    public function __clone() {
+      $this->user_name = $this->user_name . "(cloned) <br>";
+    }
+    
+   }
+   
+   Class StudentLeader extends Student {
+     public $prof_access;
+     
+     public function __construct($un, $pa) {
+       parent::__construct($un);
+       $this->prof_access = $pa;
+     }
+     
+     public function writeName() {
+       return "My Name is " . $this->user_name . " and I am a leader";
+     }
+    
+   }
+   
+   
+   $userOne = new Student("Qasim");
+   
+   echo $userOne;
+  //  $userTwo = new StudentLeader("Abul", true);
+  //  $userThree = clone $userOne;
+   
+ 
+   echo "The Class is " . get_class($userOne) . "User Name is " . $userOne->user_name . "<br>";
+   
+   
+   
+  //  echo $userOne->writeName() . "<br>";
+  //  echo $userTwo->writeName() . "<br>";
+  //  echo $userThree->writeName() . "<br>";
+  // print_r( get_class_methods('Student'));
+  // echo "<br>";
+  // print_r( get_class_vars('Student'));
   
+
+  ?>
   
-  <form action='form_reader.php' method='post'>
-  
-  
-  
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email" name='userEmail'>
-    </div>
-    <div class="form-group col-md-6">
-      <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password" name='userPassword'>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress">Address</label>
-    <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"  name='userAds'>
-  </div>
-  <div class="form-group">
-    <label for="inputAddress2">Address 2</label>
-    <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor" name='userAds2'>
-  </div>
-  <div class="form-row">
-    <div class="form-group col-md-6">
-      <label for="inputCity">City</label>
-      <input type="text" class="form-control" id="inputCity" name='city'>
-    </div>
-    <div class="form-group col-md-4">
-      <label for="inputState">State</label>
-      <select id="inputState" class="form-control" name='state'>
-        <option selected>Choose...</option>
-        <option>...</option>
-        <option>Ottawa</option>
-        <option>Toronto</option>
-      </select>
-    </div>
-    <div class="form-group col-md-2">
-      <label for="inputZip">Zip</label>
-      <input type="text" class="form-control" id="inputZip" name='zipCode'>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="form-check">
-      <input class="form-check-input" type="checkbox" id="gridCheck" name='checkBox'>
-      <label class="form-check-label" for="gridCheck">
-        Check me out
-      </label>
-    </div>
-  </div>
-  <button type="submit" class="btn btn-primary">Sign in</button>
-</form>
-
-
-
-
-
-
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-  </body>
+  <button  onClick=<?php
+    echo "window.location.href='static.php'";
+  ?>>
+    Go to Static Page
+  </button>?
+</body>
 </html>
