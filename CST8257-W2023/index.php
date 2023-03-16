@@ -1,82 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=\, initial-scale=1.0">
-  <title>OOP in PHP</title>
-</head>
-<body>
+<?php 
+    include("./common/header.php"); 
+?>
 
-  <?php 
-   class Student {
-    private $user_name;
-     public $email;
-    public function __construct($un) {
-      echo "The Class " . __CLASS__ . " was instantiated <br>";
-      $this->user_name = $un;
-    }
-    
-    public function writeName() {
-      return "My Name is " . $this->user_name;
-    }
-    
-    
-    public function __toString() {
-      return "Hi";
-    }
+<?php 
 
-    // public function __destruct() {
-    //   echo "The Class " . __CLASS__ . " was destroyed <br>";
-    //   echo "The Class " . $this->user_name . " was destroyed <br>";
-    //  }
-    
-    public function __clone() {
-      $this->user_name = $this->user_name . "(cloned) <br>";
-    }
-    
-   }
-   
-   Class StudentLeader extends Student {
-     public $prof_access;
-     
-     public function __construct($un, $pa) {
-       parent::__construct($un);
-       $this->prof_access = $pa;
-     }
-     
-     public function writeName() {
-       return "My Name is " . $this->user_name . " and I am a leader";
-     }
-    
-   }
-   
-   
-   $userOne = new Student("Qasim");
-   
-   echo $userOne;
-  //  $userTwo = new StudentLeader("Abul", true);
-  //  $userThree = clone $userOne;
-   
- 
-   echo "The Class is " . get_class($userOne) . "User Name is " . $userOne->user_name . "<br>";
-   
-   
-   
-  //  echo $userOne->writeName() . "<br>";
-  //  echo $userTwo->writeName() . "<br>";
-  //  echo $userThree->writeName() . "<br>";
-  // print_r( get_class_methods('Student'));
-  // echo "<br>";
-  // print_r( get_class_vars('Student'));
-  
+// $connection = mysqli_connect('localhost', 'qasim', 'password', 'my_db');
+// $sql = "SELECT * FROM user";
+// $results = mysqli_query($connection, $sql);
+// $users = mysqli_fetch_all($results, MYSQLI_ASSOC);
+// print "<br/>";
+// print_r($users);
 
-  ?>
-  
-  <button  onClick=<?php
-    echo "window.location.href='static.php'";
-  ?>>
-    Go to Static Page
-  </button>?
-</body>
-</html>
+
+
+// $my_pdo = new PDO("mysql:host=localhost;dbname=my_db", "qasim", "password");
+
+
+// $my_sql_query = "Insert into user(name, email, pass) values('abulG', 'q', 'a')";
+// $my_pdo_results = $my_pdo->query($my_sql_query);
+// if ($my_pdo_results == true) {
+//     echo "Data Inserted";
+// } else {
+//     echo "Data Not Inserted";
+// }
+// echo("<br/>");
+// print_r($my_db_rows);
+
+
+// $my_sql_query = "DELETE FROM user WHERE name = 'abulG'";
+// $my_pdo_results = $my_pdo->query($my_sql_query);
+// if ($my_pdo_results == true) {
+//     echo "Data Deleted";
+// } else {
+//     echo "Data Not Deleted";
+// }
+// echo("<br/>");
+
+
+// $my_update_query = "Update user set name = 'Abul' where name = 'Qasim'";
+// $my_pdo_results = $my_pdo->query($my_update_query);
+// print_r($my_pdo_results);
+// echo("<br/>");
+
+
+// $my_sql_query = "Select * from user";
+// $my_pdo_results = $my_pdo->query($my_sql_query);
+// $my_db_rows  = $my_pdo_results->fetch(PDO::FETCH_ASSOC);
+// echo("<br/>");
+// print_r($my_db_rows );
+
+?>
+
+
+
+<?php 
+
+// $my_db_pdo = new PDO("mysql:host=localhost;dbname=my_db", "qasim", "password");
+// //fetch and fetch assoc from user table
+// $sql = "SELECT * FROM user";
+// $result = $my_db_pdo->query($sql);
+// $row = $result->fetch(PDO::FETCH_ASSOC);
+// echo $row['name'];
+// print_r($row);
+// while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+//     echo $row['name'];
+// }
+
+?>
+<div class="container">
+  <h1>Welcome</h1>
+</div>
+<?php include('./common/footer.php'); ?>
