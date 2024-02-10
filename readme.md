@@ -19,4 +19,4 @@
 
 # FALL - 2023
 
-### [CST-8284-OOP IN JAVA](https://github.com/QasimTalkin/AlgonquinCollege-Live_Code_Repo/tree/main/fall2022/CST8284)
+### [CST-8284-OOP IN JAVA](https://github.com/QasimTalkin/AlgonquinCollege-Live_Code_Repo/tree/main/fall2023/CST8284)
