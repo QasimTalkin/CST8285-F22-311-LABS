@@ -63,10 +63,10 @@ nav ul {
     list-style-type: none;
     text-align: center;
     margin: 0px;
+    display: inline-block;
 }
 
 nav li {
-    display: inline-block;
     padding: 10px;
 }
 
@@ -84,25 +84,28 @@ nav a:hover {
 
 .continer {
     display: flex;
-    flex-direction: column-reverse;
+
     flex-wrap: wrap;
-    background-color: purple;
-    justify-content: space-between;
-    align-items: end;
+    background-color: rgba(128, 0, 128, 0.199);
     height: 500px;
 }
 
 .box{
-    height: 50px;
+    height: 250px;
     min-width: 50px;
+
 }
 
 .red {
     background-color: red;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .blue {
     background-color: blue;
+    flex-grow: 3;
 }
 .green {
     background-color: green;
@@ -112,4 +115,71 @@ nav a:hover {
 }
 .orange {
     background-color: orange;
+}
+.sub{
+    min-height: 50px;
+    background-color: antiquewhite;
+    flex-grow: 1;
+    margin:2px;
+}
+
+
+@media screen and (min-width:400px) {
+    nav ul {
+        display: flex;
+        justify-content: space-around;
+    }
+
+}
+
+.main {
+    display: grid;
+    grid-template-rows: repeat(10, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+    background-color: rgba(0, 255, 255, 0.228);
+    grid-gap: 2px;
+    transform: rotateZ('45') scale(0.5);
+}
+
+#img1 {
+    background-color: red;
+    grid-row: 1/3;
+    grid-column: 1/9;
+}
+
+#img2 {
+    background-color: blue;
+    grid-row: 1/9;
+    grid-column: 9/11;
+}
+
+#img3 {
+    background-color: white;
+    grid-row: 3/11;
+    grid-column: 1/3;
+}
+
+#img4 {
+    background-color: slategray;
+    grid-row: 3/9;
+    grid-column: 3/9;
+}
+
+#img5 {
+    background-color: blueviolet;
+    grid-row: 9/11;
+    grid-column: 3/11;
+}
+
+
+
+
+
+.gridItem {
+    min-height: 50px;
+}
+
+img {
+    width: 100%;
+    height: 100%;
 }
