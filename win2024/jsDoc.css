@@ -1,0 +1,10 @@
+.myCustomText {
+    font-size: medium;
+    background-color: palegoldenrod;
+    text-decoration: dotted;
+    text-shadow: 3px 5px;
+}
+
+body {
+    background-color: rgb(44, 165, 165);
+}

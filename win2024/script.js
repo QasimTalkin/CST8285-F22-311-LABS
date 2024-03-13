@@ -1,40 +1,48 @@
+let quizArray  = [
+    {
+        question: "Whats the capital of Canad ?",
+        answer: "Ottawa"
+    }, 
 
-let myArry = ["qas", "ere", "asdasd", 1]
-
-let daniel = {
-    age:17,
-    name:"DB",
-    canDrink:false
-}
-
-let michael = {
-    age:20,
-    name:"MD",
-    canDrink:true
-}
-
-
-let michael1 = {
-    age:20,
-    name:"MD",
-    canDrink:true
-}
+    {
+        question: "Whats color comes out of blue and red",
+        answer: "Purple"
+    }, 
+    {
+        question: "JS its not that bad?",
+        answer: "Maybe"
+    }
+]
 
 
-let michael2 = {
-    age:20,
-    name:"MD",
-    canDrink:true
-}
+let quizBox = document.querySelector("#quizBlock")
+
+quizArray.map((quizQuestion)=>{
+    let h3Elm = document.createElement('h3')
+    h3Elm.innerText = quizQuestion.question
+    h3Elm.style.cssText = "color:red"
+
+    let ansInput = document.createElement('input')
+    ansInput.type = "text"
+
+    let feedback = document.createElement('p')
 
 
-let michael3 = {
-    age:20,
-    name:"MD",
-    canDrink:true
-}
-let students = [daniel, michael, michael1, michael2, michael3]
+    let answer = quizQuestion.answer.toLowerCase()
+    ansInput.addEventListener("keyup", function checkAns() {
+        userAns = event.target.value.toLowerCase()
+        if (userAns == answer){
+            feedback.innerText = "YOU GOT IT"
+            feedback.style.color = "green"
+        } else if (userAns.length < answer.length ) {
+            feedback.innerText = "too short"
+            feedback.style.color = "red"
+        } else {
+            feedback.innerText = "too Long"
+            feedback.style.color = "red"
+        }
+        
+    })
 
-for (var value of students) {
-console.log(value.age)
-}
+    quizBox.append(h3Elm, ansInput, feedback)
+})
