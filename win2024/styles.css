@@ -183,3 +183,21 @@ img {
     width: 100%;
     height: 100%;
 }
+
+.valid {
+
+    background-color: aquamarine;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    border: 4px solid green;
+}
+
+.invalid {
+
+    background-color: rgb(255, 127, 127);
+
+    font-family: sans-serif;
+
+    border: 4px solid rgb(128, 0, 0);
+}
